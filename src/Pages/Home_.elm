@@ -77,19 +77,14 @@ update msg model =
 view : Model -> View Msg
 view model =
     { title = "Categories | Fodmap"
-    , body = [ div
-                [ class "bg-gray-50 h-screen"
-                ]
-                [ viewMain model
-                ]
-             ]
+    , body = [ viewMain model ]
     }
 
 viewMain: Model -> Html Msg
 viewMain model =
     main_ [ ]
         [ div
-            [ Attr.class "max-w-7xl mx-auto sm:px-6 lg:px-8"
+            [ Attr.class "max-w-5xl mx-auto sm:px-6 lg:px-8"
             ]
             [ div
                 [ Attr.class "px-4 py-8 sm:px-0"
@@ -147,7 +142,7 @@ viewCategories category =
                     [ Attr.class "text-gray-900 font-medium text-lg truncate"
                     , Attr.style "width" "calc(100% - 4rem)"
                     ]
-                    [ text category.name ]
+                    [ text (String.replace "&amp;" "&" category.name) ]
                 , p
                     [ Attr.class "truncate text-sm text-gray-500"
                     ]
