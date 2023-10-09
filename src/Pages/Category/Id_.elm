@@ -142,7 +142,7 @@ viewMain model =
                     [ Attr.attribute "lass" "container pt-6"
                     ]
                     [ div
-                        [ Attr.class "mt-6 pb-5 border-b border-gray-200 flex items-center justify-between"
+                        [ Attr.class "mt-6 pb-5 grid grid-cols-1 md:grid-cols-2 gap-4 border-b border-gray-200 flex items-center justify-between"
                         ]
                         [ h2
                             [ Attr.class "text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate flex-shrink-0"
