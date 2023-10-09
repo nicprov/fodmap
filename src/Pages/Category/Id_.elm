@@ -266,8 +266,7 @@ viewFoodItem foodItem =
                     [ Attr.class "mt-1 flex text-xs leading-5 text-gray-500"
                     ]
                     [ a
-                        [ Attr.href "mailto:leslie.alexander@example.com"
-                        , Attr.class "relative truncate hover:underline"
+                        [ Attr.class "relative truncate hover:underline"
                         ]
                         [ text foodItem.code ]
                     ]
