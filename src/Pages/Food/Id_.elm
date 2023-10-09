@@ -1,22 +1,18 @@
 module Pages.Food.Id_ exposing (Model, Msg, page)
 
 import Array
-import Common.Alerts exposing (viewAlertError, viewAlertInfo)
-import Common.Response exposing (Category, FoodItem, Product, ServingItem, productDecoder)
-import Effect exposing (Effect)
+import Common.Response exposing (Category, FoodItem, Product, ServingItem)
 import Gen.Params.Category.Id_ exposing (Params)
 import Gen.Route
-import Html exposing (Html, a, b, br, button, dd, div, dl, dt, h1, h2, h3, img, input, label, li, main_, p, span, text, time, ul)
-import Html.Attributes as Attr exposing (class)
-import Html.Events exposing (onClick, onInput)
-import Http
+import Html exposing (Html, a, button, div, h2, h3, li, main_, p, text, ul)
+import Html.Attributes as Attr
+import Html.Events exposing (onClick)
 import Page
 import Shared
 import Request exposing (Request)
 import Svg exposing (path, svg)
 import Svg.Attributes as SvgAttr
 import View exposing (View)
-import Common.Base exposing (baseUrl)
 
 page : Shared.Model -> Request.With Params -> Page.With Model Msg
 page shared req =

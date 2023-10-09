@@ -5,8 +5,8 @@ import Common.Response exposing (Category, FoodItem, Product, productDecoder)
 import Effect exposing (Effect)
 import Gen.Params.Category.Id_ exposing (Params)
 import Gen.Route
-import Html exposing (Html, a, b, br, button, dd, div, dl, dt, h1, h2, h3, img, input, label, li, main_, p, span, text, time, ul)
-import Html.Attributes as Attr exposing (class)
+import Html exposing (Html, a, button, div, h2, img, input, li, main_, p, span, text, ul)
+import Html.Attributes as Attr
 import Html.Events exposing (onClick, onInput)
 import Http
 import Page
@@ -15,7 +15,7 @@ import Request exposing (Request)
 import Svg exposing (path, svg)
 import Svg.Attributes as SvgAttr
 import View exposing (View)
-import Common.Base exposing (baseUrl)
+import Common.Base exposing (baseUrl, cdnUrl)
 
 page : Shared.Model -> Request.With Params -> Page.With Model Msg
 page shared req =
@@ -238,7 +238,7 @@ viewFoodItem foodItem =
                 Just i ->
                     img
                         [ Attr.class "h-12 w-12 flex-none rounded-full bg-gray-50"
-                        , Attr.src (baseUrl ++ "/food/forType/1/imageid/" ++ i)
+                        , Attr.src (cdnUrl ++ "/food/forType/1/imageid/" ++ i)
                         , Attr.alt (foodItem.name ++ " image")
                         ]
                         []

@@ -9,7 +9,7 @@ module Common.Response exposing ( Category
                                 )
 
 import Json.Decode as Decode exposing (Decoder, int, string)
-import Json.Decode.Pipeline exposing (optional, required)
+import Json.Decode.Pipeline exposing (required)
 
 type alias Category =
     { id: String

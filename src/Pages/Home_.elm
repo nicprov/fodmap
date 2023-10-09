@@ -1,20 +1,16 @@
 module Pages.Home_ exposing (Model, Msg, page)
 
-import Common.Footer exposing (viewFooter)
-import Common.Header exposing (viewHeader)
 import Common.Response exposing (Category, categoryDecoder)
 import Gen.Route as Route
-import Html exposing (Html, a, b, br, button, dd, div, dl, dt, h1, h2, h3, img, li, main_, p, span, text, ul)
-import Html.Attributes as Attr exposing (class)
+import Html exposing (Html, a, br, div, h2, h3, img, main_, p, span, text, ul)
+import Html.Attributes as Attr
 import Http
-import Json.Decode as Decode exposing (Decoder, int, string)
+import Json.Decode as Decode exposing (Decoder)
 import Page
 import Shared
 import Request exposing (Request)
-import Svg exposing (path, svg)
-import Svg.Attributes as SvgAttr
 import View exposing (View)
-import Common.Base exposing (baseUrl)
+import Common.Base exposing (baseUrl, cdnUrl)
 
 page : Shared.Model -> Request -> Page.With Model Msg
 page shared _ =
@@ -121,7 +117,7 @@ viewCategories category =
             ]
             [ img
                 [ Attr.class "h-10 w-10 flex-shrink-0 rounded-full bg-gray-300"
-                , Attr.src (baseUrl ++ "/category/forType/1/CategoryId/" ++ category.id ++ ".json")
+                , Attr.src (cdnUrl ++ "/category/forType/1/CategoryId/" ++ category.id ++ ".json")
                 , Attr.alt (category.name ++ " image")
                 ]
                 []

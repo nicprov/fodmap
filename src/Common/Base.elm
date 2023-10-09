@@ -1,5 +1,11 @@
-module Common.Base exposing (baseUrl)
+module Common.Base exposing ( baseUrl
+                            , cdnUrl
+                            )
 
 baseUrl: String
 baseUrl =
-    "https://fodmap.onintime.com/apin/v1"
+    "https://api.fodmap.ca/apin/v1"
+
+cdnUrl: String
+cdnUrl =
+    "https://fodmap.b-cdn.net/apin/v1"
