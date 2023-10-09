@@ -100,8 +100,8 @@ update req msg model =
                     else
                         ( model, Effect.none )
 
-                Err err ->
-                    ( { model | status = Failure (Debug.toString err) }, Effect.none )
+                Err _ ->
+                    ( { model | status = Failure "Unable to fetch food items" }, Effect.none )
 
         ChangedSearch search ->
             ( { model | search = search }, Effect.none )
