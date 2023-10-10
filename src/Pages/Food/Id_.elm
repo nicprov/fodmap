@@ -283,7 +283,7 @@ viewFodmapInfo fodmap =
                         , div
                             [ Attr.class "truncate text-sm font-medium text-black-600 pl-2"
                             ]
-                            [ text "Fructose" ]
+                            [ text "Fructan" ]
                         ]
                     ]
                 ]
