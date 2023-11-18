@@ -16,12 +16,14 @@ import View exposing (View)
 
 page : Shared.Model -> Request.With Params -> Page.With Model Msg
 page shared req =
-    Page.element
-        { init = init shared req
-        , update = update shared req
-        , view = view shared
-        , subscriptions = \_ -> Sub.none
-        }
+    Page.protected.element
+        (\_ ->
+            { init = init shared req
+            , update = update shared req
+            , view = view shared
+            , subscriptions = \_ -> Sub.none
+            }
+        )
 
 -- Init
 

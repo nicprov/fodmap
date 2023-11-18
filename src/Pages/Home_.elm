@@ -14,12 +14,14 @@ import Common.Base exposing (baseUrl, cdnUrl)
 
 page : Shared.Model -> Request -> Page.With Model Msg
 page shared _ =
-    Page.element
-        { init = init
-        , update = update
-        , view = view
-        , subscriptions = \_ -> Sub.none
-        }
+    Page.protected.element
+        (\_ ->
+            { init = init
+            , update = update
+            , view = view
+            , subscriptions = \_ -> Sub.none
+            }
+        )
 
 -- Init
 

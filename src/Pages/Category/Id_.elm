@@ -19,12 +19,14 @@ import Common.Base exposing (baseUrl, cdnUrl)
 
 page : Shared.Model -> Request.With Params -> Page.With Model Msg
 page shared req =
-    Page.advanced
-        { init = init req
-        , update = update req
-        , view = view
-        , subscriptions = \_ -> Sub.none
-        }
+    Page.protected.advanced
+        (\_ ->
+            { init = init req
+            , update = update req
+            , view = view
+            , subscriptions = \_ -> Sub.none
+            }
+        )
 
 -- Init
 
